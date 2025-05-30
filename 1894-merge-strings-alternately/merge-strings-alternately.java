@@ -5,10 +5,9 @@ class Solution {
         if(word1.length()<0||word2.length()<0||word1.length()>100||word2.length()>100){
             return res.toString();
         }
-        for (int i=0; i<word1.length();i++){
-            if(!word1.equals(word1.toLowerCase())||!word2.equals(word2.toLowerCase())){
-                return res.toString();
-            }
+
+        if(!word1.equals(word1.toLowerCase())||!word2.equals(word2.toLowerCase())){
+            return res.toString();
         }
 
         // Find the largest common index 
