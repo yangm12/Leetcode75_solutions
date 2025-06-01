@@ -4,8 +4,7 @@ class Solution {
             return "";
         }
 
-        // String[] ws = s.split(" ");
-        ArrayList<String> words = new ArrayList<>(Arrays.asList(s.split(" ")));
+        ArrayList<String> words = new ArrayList<>(Arrays.asList(s.split("\\s+")));
 
         // Check for spaces
         words.removeIf(word -> word.equals(""));
