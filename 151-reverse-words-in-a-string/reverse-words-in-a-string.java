@@ -1,15 +1,31 @@
 class Solution {
     public String reverseWords(String s) {
-        if(s.length()<1 || s.length()>10000){
-            return "";
+        // Using 2 pointers to solve the problem
+        String[] words = s.split("\\s+");
+        int left = 0;
+        int right = words.length - 1;
+
+        // 2 pointer reversing
+        while (left<right){
+            String temp = words[left];
+            words[left] = words[right];
+            words[right] = temp;
+            left++;
+            right--;
         }
 
-        ArrayList<String> words = new ArrayList<>(Arrays.asList(s.split("\\s+")));
+        StringBuilder res = new StringBuilder();
+        for(String word:words){
+            if(!word.isEmpty()){
+                // Manually adding white spaces between words
+                if(res.length()>0){
+                    res.append(" ");
+                }
+                res.append(word);
+            }
+        }
 
-        // Check for spaces
-        words.removeIf(word -> word.equals(""));
-        Collections.reverse(words);
+        return res.toString();
 
-        return String.join(" ", words);
     }
 }
