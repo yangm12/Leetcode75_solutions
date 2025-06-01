@@ -1,33 +1,34 @@
 class Solution {
     public String reverseVowels(String s) {
-        // Constraints checking
-        if(s.length()<1 || s.length()>300000){
-            return "";
-        }
-
-        // Find vowels in s and their corresponding positions
-        // Reverse the vowels and insert back to their corresponding positions
         char[] chars = s.toCharArray();
+        int start=0;
+        int end=s.length()-1;
+        String vowels ="aeiouAEIOU";
 
-        // Get vowels' ASCII codes in an immutable list
-        List<Integer> vowelAsciiCodes = List.of(97, 101, 105, 111, 117,
-            65, 69, 73, 79, 85);
-        ArrayList<Character> vowels = new ArrayList<>();
-        ArrayList<Integer> pos = new ArrayList<>();
-
-        // Loop through each char in s and check if this is a vowel
-        for(int i=0; i<chars.length; i++){
-            if(vowelAsciiCodes.contains((int)chars[i])){
-                vowels.add(chars[i]);
-                pos.add(i);
+        while (start<end){
+            // Move start pointer until it points to a vowel.
+            // If the index of the current char is not a vowel, 
+            // indexOf will return -1.
+            while (start<end && vowels.indexOf(chars[start])==-1){
+                start++;
             }
-        }
-        Collections.reverse(vowels);
-        // Place the reversed vowels back
-        for(int i=0; i<vowels.size(); i++){
-            chars[pos.get(i)] = vowels.get(i);
+
+            // Move end pointer until it points to a vowel.
+            while(start<end && vowels.indexOf(chars[end])==-1){
+                end--;
+            }
+
+            // Swap the vowels
+            char temp = chars[start];
+            chars[start] = chars[end];
+            chars[end] = temp;
+
+            // Move the pointers twd each other
+            start++;
+            end--;
         }
 
         return new String(chars);
+        
     }
 }
