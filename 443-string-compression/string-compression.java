@@ -22,7 +22,6 @@ class Solution {
 
             // Write character
             chars[index++] = curr_char;
-            System.out.println(new String(chars));
 
             // Write count if more than 1
             if (ctr > 1) {
@@ -30,7 +29,6 @@ class Solution {
                     chars[index++] = c;
                 }
             }
-            System.out.println("after: "+new String(chars));
         }
         System.out.println(index);
         return index;
