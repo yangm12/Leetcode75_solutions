@@ -17,7 +17,6 @@ class Solution {
             if(pt>=str.length){
                 return true;
             }
-
             // If matches, increment pointer
             if(str[pt]==c){
                 pt++;
