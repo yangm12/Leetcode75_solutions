@@ -13,21 +13,16 @@ class Solution {
         char[] str = s.toCharArray();
 
         for(char c:t.toCharArray()){
-            // The pointer is out of bound -> s is fully traversed
-            if(pt>=str.length){
-                return true;
-            }
             // If matches, increment pointer
             if(str[pt]==c){
                 pt++;
             }
+            // The pointer is out of bound -> s is fully traversed
+            if(pt>=str.length){
+                return true;
+            }
         }
 
-        // Check whether s is fully traversed after the loop
-        if(pt==str.length){
-            return true;
-        }else{
-            return false;
-        }
+        return false;
     }
 }
