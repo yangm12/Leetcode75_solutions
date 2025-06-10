@@ -16,17 +16,12 @@ class Solution {
             int temp = (right-left)*(Math.min(height[left], height[right]));
             if(area<temp){
                 area = temp;
-                System.out.println("left: "+area);
-            }else{
-                System.out.println("right: "+area);
             }
             if(height[left]>height[right]){
                 right--;
             }else{
                 left++;
             }
-
-            
         }
         return area;
     }
