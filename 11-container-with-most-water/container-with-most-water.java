@@ -6,7 +6,8 @@ class Solution {
         }
 
         if(height.length==2){
-            return Math.min(height[0],height[1])*Math.min(height[0],height[1]);
+            int temp = Math.min(height[0],height[1]);
+            return temp*temp;
         }
 
         int right = height.length-1;
@@ -15,10 +16,8 @@ class Solution {
             int temp = (right-left)*(Math.min(height[left], height[right]));
             if(area<temp){
                 area = temp;
-                // left++;
                 System.out.println("left: "+area);
             }else{
-                // right--;
                 System.out.println("right: "+area);
             }
             if(height[left]>height[right]){
