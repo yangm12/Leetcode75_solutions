@@ -5,19 +5,20 @@ class Solution {
             return 0.0;
         }
 
-        int max_sum = -Integer.MAX_VALUE;
-        if(nums.length==k){
-            max_sum = Arrays.stream(nums).sum();
-            return (double)max_sum/k;
+        int sum = 0;
+        // Find the total sum of the current window of size k
+        for(int i = 0; i<k; i++){
+            sum += nums[i];
         }
 
-        for(int i=0; i<nums.length-k+1; i++){
-            int curr_sum = nums[i];
-            for(int j=1; j<k;j++){
-                curr_sum+=nums[i+j];
-            }
-            max_sum = Math.max(max_sum, curr_sum);
+        int maxSum = sum;
+
+        // Find the total sum of the next window of size k, 
+        // and compare them. 
+        for(int i = k; i<nums.length; i++){
+            sum += nums[i] - nums[i - k];
+            maxSum = Math.max(maxSum, sum);
         }
-        return (double)max_sum/k;
+        return (double)maxSum / k;
     }
 }
