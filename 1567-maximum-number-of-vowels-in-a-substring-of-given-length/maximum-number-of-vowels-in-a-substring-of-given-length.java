@@ -11,10 +11,8 @@ class Solution {
 
         // First window
         for(int i=0; i<k; i++){
-            System.out.println(str[i]);
             if(vowels.contains(str[i])){
                 curr++;
-                System.out.println(curr);
             }
             if(curr==k){
                 return k;
@@ -22,7 +20,6 @@ class Solution {
         }
 
         int max = curr;
-        System.out.println(max);
         // Following windows
         for(int i=k; i<str.length; i++){
             if(vowels.contains(str[i])){
