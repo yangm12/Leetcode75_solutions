@@ -6,14 +6,13 @@ class Solution {
         }
 
         int curr = 0;
-        List<Character> vowels = List.of('a', 'e', 'i', 'o', 'u');
-        char[] str = s.toCharArray();
+        char c = '1';
+        char ch = '1';
 
         // First window
         for(int i=0; i<k; i++){
-            if(vowels.contains(str[i])){
-                curr++;
-            }
+            c=s.charAt(i);
+            if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u') curr++;
             if(curr==k){
                 return k;
             }
@@ -21,13 +20,11 @@ class Solution {
 
         int max = curr;
         // Following windows
-        for(int i=k; i<str.length; i++){
-            if(vowels.contains(str[i])){
-                curr++;
-            }
-            if(vowels.contains(str[i-k])){
-                curr--;
-            }
+        for(int i=k; i<s.length(); i++){
+            c=s.charAt(i);
+            ch=s.charAt(i-k);
+            if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u') curr++;
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') curr--;
             if(curr==k){
                 return k;
             }
