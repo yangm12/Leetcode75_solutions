@@ -3,7 +3,7 @@ class Solution {
         // Constraints checking
         if(nums.length<1||nums.length>100000) return 0;
 
-        /* Beats 98.04% runtime, 6.59% memory
+        // Beats 98.04% runtime, 6.59% memory
         int left = 0;
         int k = 1;
         for(int right=0; right<nums.length; right++){
@@ -18,8 +18,9 @@ class Solution {
             }
         }
         return nums.length-left-1;
-        */
+        
 
+        /* Beats 79.5% runtime, 59.54% memory
         int left = 0, zeros = 0, ans = 0;
         for(int right=0; right<nums.length; right++){
             if(nums[right]==0){
@@ -34,6 +35,6 @@ class Solution {
             ans = Math.max(ans, right-left+1-zeros);
         }
         return (ans==nums.length)? ans-1:ans;
-
+        */
     }
 }
