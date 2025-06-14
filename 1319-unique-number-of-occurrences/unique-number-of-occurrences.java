@@ -8,10 +8,7 @@ class Solution {
             freq.put(n, freq.getOrDefault(n, 0)+1);
         }
 
-        Set<Integer> set = new HashSet<>();
-        for (int n:freq.values()){
-            set.add(n);
-        }
+        Set<Integer> set = new HashSet<>(freq.values());
 
         return freq.size()==set.size();
     }
