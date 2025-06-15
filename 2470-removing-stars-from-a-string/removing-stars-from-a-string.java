@@ -22,6 +22,7 @@ class Solution {
         return sb.toString();
         */
 
+        /* Beats 70.15% runtime, 63.85% memory
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<s.length();i++){
             if(s.charAt(i)=='*'){
@@ -31,6 +32,15 @@ class Solution {
             }
         }
         return sb.toString();
+        */
 
+        char[] arr= s.toCharArray();
+        int i=0;
+        for(char ch:arr)
+        {
+            if(ch=='*') i--;
+            else arr[i++]=ch;
+        }
+        return new String(arr,0,i);
     }
 }
