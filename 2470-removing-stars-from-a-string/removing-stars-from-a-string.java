@@ -34,6 +34,7 @@ class Solution {
         return sb.toString();
         */
 
+        // Beats 99.29% runtime, 71.89% memory
         char[] arr= s.toCharArray();
         int i=0;
         for(char ch:arr)
