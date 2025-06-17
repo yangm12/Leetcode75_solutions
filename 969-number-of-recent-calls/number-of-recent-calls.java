@@ -1,6 +1,7 @@
 class RecentCounter {
     private Queue<Integer> queue;
     public RecentCounter() {
+        // Memory-ptimised by using LinkedList instead of ArrayDeque
         queue = new LinkedList<>();
     }
     
