@@ -2,7 +2,6 @@ class RecentCounter {
 
     Queue<Integer> queue = new ArrayDeque<>();
     public RecentCounter() {
-        // int n = 0;
     }
     
     public int ping(int t) {
