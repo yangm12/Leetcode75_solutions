@@ -24,11 +24,14 @@ class Solution {
         // Get the number of possible paths ending at the current node.
         int ctr = prefixSumCount.getOrDefault(currSum-target, 0);
 
+        // Put the currSum into prefix for child nodes to find possible paths. 
         prefixSumCount.put(currSum, prefixSumCount.getOrDefault(currSum, 0)+1);
 
+        // Traverse the left and right subtree of the current node.
         ctr += DFS(node.left, currSum, target, prefixSumCount);
         ctr += DFS(node.right, currSum, target, prefixSumCount);
 
+        // Remove the currSum to prevent false paths. 
         prefixSumCount.put(currSum, prefixSumCount.get(currSum)-1);
 
         return ctr;
