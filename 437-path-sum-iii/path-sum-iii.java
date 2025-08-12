@@ -40,6 +40,6 @@ class Solution {
     public int pathSum(TreeNode root, int targetSum) {
         HashMap<Long, Long> prefixSumCount = new HashMap<>();
         prefixSumCount.put(0L, 1L);
-        return DFS(root, 0, targetSum, prefixSumCount);
+        return DFS(root, 0L, targetSum, prefixSumCount);
     }
 }
