@@ -30,9 +30,9 @@ class Solution {
         ctr += DFS(node.right, currSum, target, prefixSumCount);
 
         prefixSumCount.put(currSum, prefixSumCount.get(currSum)-1L);
-        if (prefixSumCount.get(currSum) == 0) {
-            prefixSumCount.remove(currSum);
-        }
+        // if (prefixSumCount.get(currSum) == 0) {
+        //     prefixSumCount.remove(currSum);
+        // }
 
         return (int)ctr;
     }
