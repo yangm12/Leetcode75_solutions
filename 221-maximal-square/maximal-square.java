@@ -14,9 +14,6 @@ class Solution {
                         dp[i][j] = 1;
                     }else{
                         dp[i][j] = Math.min(Math.min(dp[i][j-1], dp[i-1][j]), dp[i-1][j-1]) + 1;
-                        System.out.println(dp[i][j]);
-                        System.out.println("i: "+i);
-                        System.out.println("j: "+j);
                     }
                     size = Math.max(size, dp[i][j]);
                 }
