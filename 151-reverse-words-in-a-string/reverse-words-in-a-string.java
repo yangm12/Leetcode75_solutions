@@ -14,7 +14,7 @@ class Solution {
             right--;
         }
 
-        System.out.println(Arrays.toString(words));
+        // System.out.println(Arrays.toString(words));
 
         StringBuilder res = new StringBuilder();
         for(String word:words){
